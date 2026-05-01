@@ -1,4 +1,4 @@
-Here is the HTML document that presents your Pokémon event details with the exact style preserved and the new prize structure integrated.
+Here is the complete HTML code for your Metronome Battle event page, featuring the specified prizes and rules in a clean, visually organized layout.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -247,6 +247,37 @@ Here is the HTML document that presents your Pokémon event details with the exa
             background: #fffaf2;
             transition: background 0.15s;
         }
+
+        /* prize specific highlight */
+        .prize-highlight {
+            background: #fff4e2;
+            border: 1px solid #ffe0b5;
+            border-radius: 24px;
+            padding: 1rem 1.2rem;
+            margin: 0.5rem 0 1.2rem 0;
+        }
+        .prize-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.6rem;
+            margin-bottom: 0.55rem;
+            font-size: 0.95rem;
+        }
+        .prize-label {
+            font-weight: 700;
+            min-width: 100px;
+            color: #b4621a;
+        }
+        .prize-value {
+            color: #2c4e6e;
+            font-weight: 500;
+        }
+        .participant-special {
+            margin-top: 8px;
+            border-top: 1px dashed #f7d9a8;
+            padding-top: 8px;
+        }
     </style>
 </head>
 <body>
@@ -276,24 +307,25 @@ Here is the HTML document that presents your Pokémon event details with the exa
             </div>
         </div>
 
-        <!-- PRIZES SECTION: 1st TBA, 2nd Zapdos 6x31, 3rd TBA, all participants 100k -->
+        <!-- ========== PRIZES SECTION ========== -->
+        <!-- 1st: TBA, 2nd: zapdos 6x31, 3rd: TBA, all participants: 100k -->
         <div class="section-title">🏆 event prizes</div>
-        <div class="event-details" style="background: #fff4e2; margin-top: 0;">
-            <div class="detail-row">
-                <span class="detail-label">🥇 1st place:</span>
-                <span class="detail-value"><strong>TBA</strong> (to be announced)</span>
+        <div class="prize-highlight">
+            <div class="prize-row">
+                <span class="prize-label">🥇 1st place:</span>
+                <span class="prize-value"><strong>TBA</strong> (to be announced — stay tuned!)</span>
             </div>
-            <div class="detail-row">
-                <span class="detail-label">🥈 2nd place:</span>
-                <span class="detail-value"><strong>Zapdos · 6x31 IVs</strong> ⚡ perfect legendary bird</span>
+            <div class="prize-row">
+                <span class="prize-label">🥈 2nd place:</span>
+                <span class="prize-value"><strong>⚡ Zapdos · 6x31 IVs</strong> — flawless legendary bird, perfect IV spread</span>
             </div>
-            <div class="detail-row">
-                <span class="detail-label">🥉 3rd place:</span>
-                <span class="detail-value"><strong>TBA</strong> (to be announced)</span>
+            <div class="prize-row">
+                <span class="prize-label">🥉 3rd place:</span>
+                <span class="prize-value"><strong>TBA</strong> (revealed on battle day)</span>
             </div>
-            <div class="detail-row" style="margin-top: 6px; border-top: 1px dashed #f7d9a8; padding-top: 8px;">
-                <span class="detail-label">🎁 All participants:</span>
-                <span class="detail-value"><strong>100,000 PokéDollars</strong> · every trainer who battles gets the prize ✨</span>
+            <div class="prize-row participant-special">
+                <span class="prize-label">🎁 All participants:</span>
+                <span class="prize-value"><strong>100,000 PokéDollars</strong> ✨ — every registered trainer who competes receives the full prize pot!</span>
             </div>
         </div>
 
@@ -350,10 +382,10 @@ Here is the HTML document that presents your Pokémon event details with the exa
             </div>
         </div>
 
-        <!-- tiny extra reminder with route 34 mention -->
+        <!-- final reminder with full prize recap (ensures no info is missed) -->
         <div style="font-size: 0.7rem; text-align: center; margin-top: 1rem; color: #a07d56; border-top: 1px dashed #eddcc8; padding-top: 0.8rem;">
             ⚡ No exceptions: Metronome only · DQ enforced · Borrowed Togepi allowed only if original catch location (Route 34, Johto) is inaccessible.
-            <br>🏆 Prizes: 1st TBA | 2nd Zapdos (6x31) | 3rd TBA | All participants receive 100,000 PokéDollars.
+            <br>🏆 <strong>Prize recap:</strong> 1st = TBA | 2nd = Zapdos (6x31 IVs) | 3rd = TBA | 🎁 All participants receive 100,000 PokéDollars.
         </div>
     </div>
 </body>
