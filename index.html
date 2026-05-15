@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Metronome Battle | Togepi Chaos · Unova</title>
+
     <style>
         * {
             margin: 0;
@@ -21,15 +22,14 @@
             justify-content: center;
         }
 
-        /* clean card - simple & modern */
         .home {
             max-width: 620px;
             width: 100%;
             background: #ffffff;
             border-radius: 32px;
             padding: 1.8rem;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
-            transition: box-shadow 0.2s;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08),
+                        0 2px 6px rgba(0, 0, 0, 0.02);
         }
 
         h1 {
@@ -51,8 +51,6 @@
             padding: 0.2rem 0.75rem;
             border-radius: 40px;
             color: #b45f1b;
-            vertical-align: middle;
-            letter-spacing: 0;
         }
 
         .accent-line {
@@ -63,7 +61,6 @@
             margin: 0.5rem 0 1.2rem 0;
         }
 
-        /* event highlight block */
         .event-details {
             background: #fef7e8;
             border-radius: 24px;
@@ -104,7 +101,6 @@
             padding-left: 10px;
         }
 
-        /* rules list - clean cards */
         .rules-list {
             list-style: none;
             background: #fdfdf5;
@@ -128,6 +124,11 @@
             border-bottom: none;
         }
 
+        .rules-list li:hover {
+            background: #fffaf2;
+            transition: background 0.15s;
+        }
+
         .bullet {
             color: #f5a65a;
             font-weight: 600;
@@ -145,7 +146,6 @@
             margin-left: 0.2rem;
         }
 
-        /* special notice for borrowing & DQ */
         .notice-box {
             background: #fff6e8;
             border-left: 4px solid #f4b643;
@@ -160,7 +160,6 @@
             color: #cf6f2e;
         }
 
-        /* footer event & channel */
         .event-footer {
             margin-top: 1.5rem;
             display: flex;
@@ -193,60 +192,6 @@
             font-weight: 500;
         }
 
-        /* responsive */
-        @media (max-width: 550px) {
-            body {
-                padding: 1rem;
-            }
-            .home {
-                padding: 1.3rem;
-            }
-            h1 {
-                font-size: 1.55rem;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .to-gepi {
-                font-size: 0.85rem;
-            }
-            .detail-row {
-                gap: 0.4rem;
-            }
-            .detail-label {
-                min-width: 65px;
-            }
-            .rules-list li {
-                padding: 0.75rem 0.85rem;
-                font-size: 0.88rem;
-                flex-wrap: wrap;
-            }
-            .notice-box {
-                padding: 0.7rem 0.9rem;
-                font-size: 0.82rem;
-            }
-            .event-footer {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.6rem;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .detail-label {
-                min-width: 100%;
-            }
-            .event-details {
-                padding: 0.8rem;
-            }
-        }
-
-        /* hover subtle */
-        .rules-list li:hover {
-            background: #fffaf2;
-            transition: background 0.15s;
-        }
-
-        /* prize specific highlight */
         .prize-highlight {
             background: #fff4e2;
             border: 1px solid #ffe0b5;
@@ -254,6 +199,7 @@
             padding: 1rem 1.2rem;
             margin: 0.5rem 0 1.2rem 0;
         }
+
         .prize-row {
             display: flex;
             flex-wrap: wrap;
@@ -262,130 +208,302 @@
             margin-bottom: 0.55rem;
             font-size: 0.95rem;
         }
+
         .prize-label {
             font-weight: 700;
-            min-width: 100px;
+            min-width: 120px;
             color: #b4621a;
         }
+
         .prize-value {
             color: #2c4e6e;
             font-weight: 500;
         }
+
         .participant-special {
             margin-top: 8px;
             border-top: 1px dashed #f7d9a8;
             padding-top: 8px;
         }
+
+        @media (max-width: 550px) {
+
+            body {
+                padding: 1rem;
+            }
+
+            .home {
+                padding: 1.3rem;
+            }
+
+            h1 {
+                font-size: 1.55rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .to-gepi {
+                font-size: 0.85rem;
+            }
+
+            .rules-list li {
+                padding: 0.75rem 0.85rem;
+                font-size: 0.88rem;
+                flex-wrap: wrap;
+            }
+
+            .event-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .detail-label {
+                min-width: 100%;
+            }
+
+            .event-details {
+                padding: 0.8rem;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <div class="home">
-        <h1>
-            Metronome Battle <span class="to-gepi"> Togepi-only 🐣</span>
-        </h1>
-        <div class="accent-line"></div>
 
-        <!-- Event main info card -->
-        <div class="event-details">
-            <div class="detail-row">
-                <span class="detail-label">📍 What:</span>
-                <span class="detail-value">Metronome Battle · Only Togepi allowed</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">🗺️ Where:</span>
-                <span class="detail-value">Unova — Accumula Town (battle location)</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">📅 When:</span>
-                <span class="detail-value">May 15, 2026 — 9pm</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">📡 Channel:</span>
-                <span class="detail-value">Channel 2</span>
-            </div>
+<div class="home">
+
+    <h1>
+        Metronome Battle
+        <span class="to-gepi">Togepi-only 🐣</span>
+    </h1>
+
+    <div class="accent-line"></div>
+
+    <!-- EVENT INFO -->
+    <div class="event-details">
+
+        <div class="detail-row">
+            <span class="detail-label">📍 What:</span>
+            <span class="detail-value">
+                Metronome Battle · Only Togepi allowed
+            </span>
         </div>
 
-        <!-- ========== PRIZES SECTION ========== -->
-        <!-- 1st: TBA, 2nd: zapdos 6x31, 3rd: TBA, all participants: 100k -->
-        <div class="section-title">🏆 event prizes</div>
-        <div class="prize-highlight">
-            <div class="prize-row">
-                <span class="prize-label">🥇 1st place:</span>
-                <span class="prize-value"><strong>2,000,000</strong>Pokeyen</span>
-            </div>
-            <div class="prize-row">
-                <span class="prize-label">🥈 2nd place:</span>
-                <span class="prize-value"><strong> Zapdos</span>
-            </div>
-            <div class="prize-row">
-                <span class="prize-label">🥉 3rd place:</span>
-                <span class="prize-value"><strong>500,000</strong> Pokeyen</span>
-            </div>
-            <div class="prize-row participant-special">
-                <span class="prize-label">🎁 All participants:</span>
-                <span class="prize-value"><strong>100,000 Yen</strong> ✨ — every registered trainer who competes receives the full prize pot!</span>
-            </div>
+        <div class="detail-row">
+            <span class="detail-label">🗺️ Where:</span>
+            <span class="detail-value">
+                Unova — Accumula Town (battle location)
+            </span>
         </div>
 
-        <!-- core rules section -->
-        <div class="section-title">⚔️ battle rules</div>
-        <ul class="rules-list">
-            <li>
-                <span class="bullet">●</span>
-                <span><strong>Only Togepi</strong> <span class="rule-extra">— no other Pokémon allowed. Both battlers must use Togepi.</span></span>
-            </li>
-            <li>
-                <span class="bullet">●</span>
-                <span><strong>Metronome only</strong> <span class="rule-extra">— no other moves permitted. If any other move is used, instant DQ.</span></span>
-            </li>
-            <li>
-                <span class="bullet">●</span>
-                <span><strong>Must be Trainer's OT</strong> <span class="rule-extra">— original trainer required (except borrowing clause).</span></span>
-            </li>
-            <li>
-                <span class="bullet">●</span>
-                <span><strong>No EV / No Item</strong> <span class="rule-extra">— zero effort values, no held items of any kind.</span></span>
-            </li>
-            <li>
-                <span class="bullet">●</span>
-                <span><strong>Disqualification (DQ)</strong> <span class="rule-extra">— using non-metronome moves, wrong Pokémon, or breaking OT rule results in immediate DQ.</span></span>
-            </li>
-        </ul>
-
-        <!-- special clause: borrowing togepi & route 34 (Johto) -->
-        <div class="notice-box">
-            <strong>📋 Borrowing Clause — Route 34 (Johto) exception</strong><br>
-            Togepi can be caught on <strong>Route 34 in Johto</strong>. If a trainer cannot access that location to catch their own Togepi (e.g. game restrictions, region lock), they are allowed to <strong>borrow a Togepi from another trainer</strong>. 
-            The borrowed Togepi must still respect the <strong>Metronome-only, No EV, No Item</strong> rules. 
-            All borrowed Togepi must be declared before the battle starts.
+        <div class="detail-row">
+            <span class="detail-label">📅 When:</span>
+            <span class="detail-value">
+                May 15, 2026 — 9PM
+            </span>
         </div>
 
-        <!-- additional clarity: other moves ban & location -->
-        <div class="notice-box" style="background: #fef3e3; border-left-color: #e09d42;">
-            <strong>⚠️ Only move allowed: Metronome</strong><br>
-            Any use of Struggle, status moves, or any other attack learned via Metronome randomness is <strong>not allowed</strong> — if a Pokémon uses any move other than Metronome (by any means), the trainer is disqualified. 
-            Keep it pure: only the Metronome button. Battles take place in <strong>Accumula Town, Unova</strong> — be on time.
+        <div class="detail-row">
+            <span class="detail-label">📡 Channel:</span>
+            <span class="detail-value">
+                Channel 2
+            </span>
         </div>
 
-        <!-- footer with date / channel -->
-        <div class="event-footer">
-            <div class="badge">
-                🎲 May 15, 2026 — 9pm
-            </div>
-            <div class="channel-info">
-                📺 Channel 2 · Unova Region
-            </div>
-            <div class="badge" style="background: #dfd6c8;">
-                🐣 Togepi only
-            </div>
-        </div>
-
-        <!-- final reminder with full prize recap (ensures no info is missed) -->
-        <div style="font-size: 0.7rem; text-align: center; margin-top: 1rem; color: #a07d56; border-top: 1px dashed #eddcc8; padding-top: 0.8rem;">
-            ⚡ No exceptions: Metronome only · DQ enforced · Borrowed Togepi allowed only if original catch location (Route 34, Johto) is inaccessible.
-            <br>🏆 <strong>Prize recap:</strong> 1st = TBA | 2nd = Zapdos (6x31 IVs) | 3rd = TBA | 🎁 All participants receive 100,000 PokéDollars.
-        </div>
     </div>
+
+    <!-- PRIZES -->
+    <div class="section-title">🏆 Event Prizes</div>
+
+    <div class="prize-highlight">
+
+        <div class="prize-row">
+            <span class="prize-label">🥇 1st Place:</span>
+            <span class="prize-value">
+                <strong>2,000,000</strong> PokéYen
+            </span>
+        </div>
+
+        <div class="prize-row">
+            <span class="prize-label">🥈 2nd Place:</span>
+            <span class="prize-value">
+                <strong>Zapdos</strong>
+            </span>
+        </div>
+
+        <div class="prize-row">
+            <span class="prize-label">🥉 3rd Place:</span>
+            <span class="prize-value">
+                <strong>500,000</strong> PokéYen
+            </span>
+        </div>
+
+        <div class="prize-row participant-special">
+            <span class="prize-label">🎁 Consolation:</span>
+            <span class="prize-value">
+                <strong>100,000 PokéYen</strong> —
+                only trainers who officially participate in their match
+                are eligible to receive the consolation reward.
+            </span>
+        </div>
+
+    </div>
+
+    <!-- RULES -->
+    <div class="section-title">⚔️ Battle Rules</div>
+
+    <ul class="rules-list">
+
+        <li>
+            <span class="bullet">●</span>
+            <span>
+                <strong>Only Togepi</strong>
+                <span class="rule-extra">
+                    — no other Pokémon allowed. Both battlers must use Togepi.
+                </span>
+            </span>
+        </li>
+
+        <li>
+            <span class="bullet">●</span>
+            <span>
+                <strong>Metronome Only</strong>
+                <span class="rule-extra">
+                    — no other moves permitted. Using another move = instant DQ.
+                </span>
+            </span>
+        </li>
+
+        <li>
+            <span class="bullet">●</span>
+            <span>
+                <strong>Must Be Trainer's OT</strong>
+                <span class="rule-extra">
+                    — original trainer required except under borrowing clause.
+                </span>
+            </span>
+        </li>
+
+        <li>
+            <span class="bullet">●</span>
+            <span>
+                <strong>No EV / No Item</strong>
+                <span class="rule-extra">
+                    — zero EVs and absolutely no held items allowed.
+                </span>
+            </span>
+        </li>
+
+        <li>
+            <span class="bullet">●</span>
+            <span>
+                <strong>Consolation Prize Rule</strong>
+                <span class="rule-extra">
+                    — only players who actually battle in the tournament
+                    can receive the 100,000 PokéYen consolation reward.
+                    AFK, no-show, or disqualified players are not eligible.
+                </span>
+            </span>
+        </li>
+
+        <li>
+            <span class="bullet">●</span>
+            <span>
+                <strong>Disqualification (DQ)</strong>
+                <span class="rule-extra">
+                    — using the wrong Pokémon, breaking rules,
+                    or using non-metronome moves results in immediate DQ.
+                </span>
+            </span>
+        </li>
+
+    </ul>
+
+    <!-- BORROWING CLAUSE -->
+    <div class="notice-box">
+
+        <strong>📋 Borrowing Clause — Route 34 (Johto) Exception</strong>
+        <br><br>
+
+        Togepi can be caught on
+        <strong>Route 34 in Johto</strong>.
+
+        If a trainer cannot access the location,
+        they are allowed to
+        <strong>borrow a Togepi from another trainer</strong>.
+
+        Borrowed Togepi must still follow all rules:
+        <strong>Metronome-only, No EV, and No Item</strong>.
+
+        All borrowed Togepi must be declared before battle starts.
+
+    </div>
+
+    <!-- IMPORTANT NOTICE -->
+    <div class="notice-box"
+         style="background:#fef3e3; border-left-color:#e09d42;">
+
+        <strong>⚠️ Important Battle Notice</strong>
+        <br><br>
+
+        The only selectable move allowed is
+        <strong>Metronome</strong>.
+
+        Any intentional use of another move,
+        wrong setup,
+        or rule abuse results in instant disqualification.
+
+        Battles take place in
+        <strong>Accumula Town, Unova</strong>.
+
+        Be on time and ready before the bracket starts.
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="event-footer">
+
+        <div class="badge">
+            🎲 May 15, 2026 — 9PM
+        </div>
+
+        <div class="channel-info">
+            📺 Channel 2 · Unova Region
+        </div>
+
+        <div class="badge" style="background:#dfd6c8;">
+            🐣 Togepi Only
+        </div>
+
+    </div>
+
+    <!-- FINAL REMINDER -->
+    <div style="
+        font-size:0.72rem;
+        text-align:center;
+        margin-top:1rem;
+        color:#a07d56;
+        border-top:1px dashed #eddcc8;
+        padding-top:0.8rem;
+    ">
+
+        ⚡ No exceptions: Metronome only · DQ enforced ·
+        Borrowed Togepi allowed only if Route 34 access is unavailable.
+
+        <br><br>
+
+        🏆 <strong>Prize Recap:</strong>
+        1st = 2,000,000 PokéYen |
+        2nd = Zapdos |
+        3rd = 500,000 PokéYen |
+        🎁 Participating Trainers = 100,000 PokéYen consolation reward.
+
+    </div>
+
+</div>
+
 </body>
 </html>
- 
